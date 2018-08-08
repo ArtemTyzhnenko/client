@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 
 
 let initialState = {
-    authenticated: '',
+    authenticated: localStorage.getItem('token') || '',
     errorMessage: '',
 };
 

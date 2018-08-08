@@ -18,7 +18,9 @@ export const signUpUser = (formProps, callback) => {
     return dispatch => {
         return axios.post('http://localhost:3090/signup', formProps)
             .then(response => {
-                dispatch(signup(response.data.token));
+                const token = response.data.token;
+                dispatch(signup(token));
+                localStorage.setItem('token', token);
                 callback();
             })
             .catch(() => dispatch(signupError('Email in use')))
