@@ -9,6 +9,7 @@ import App from './components/App';
 import Welcome from './components/Welcome/Welcome';
 import Signup from './components/Auth/Signup/Signup';
 import Signout from './components/Auth/Signout/Signout';
+import Signin from './components/Auth/Signin/Signin'
 import Feature from './components/Feature/Feature';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path="/" exact component={Welcome}/>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/signout" component={Signout}/>
+                <Route path="/signin" component={Signin}/>
                 <Route path="/feature" component ={Feature}/>
             </App>
         </BrowserRouter>

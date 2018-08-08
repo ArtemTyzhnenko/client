@@ -36,3 +36,15 @@ export const signUpUser = (formProps, callback) => {
     }
 };
 
+export const signInUser = (formProps, callback) => {
+    return dispatch => {
+        return axios.post('http://localhost:3090/signin', {username: formProps.email, password: formProps.password})
+            .then(response => {
+                const token = response.data.token;
+                dispatch(signup(token));
+                localStorage.setItem('token', token);
+                callback();
+            })
+            .catch(() => dispatch(signupError('Invalid login credentials')))
+    }
+};
