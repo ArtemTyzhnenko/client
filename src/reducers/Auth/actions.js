@@ -14,6 +14,15 @@ export const signupError = (massage) => {
     }
 };
 
+export const signout = () => {
+    localStorage.removeItem('token');
+
+    return{
+        type: actionTypes.AUTH_USER,
+        payload: '',
+    }
+};
+
 export const signUpUser = (formProps, callback) => {
     return dispatch => {
         return axios.post('http://localhost:3090/signup', formProps)
