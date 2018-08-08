@@ -42,9 +42,9 @@ class Signup extends  Component {
     }
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = ({auth}) =>{
     return{
-        errorMessage : state.auth.errorMessage
+        errorMessage : auth.errorMessage
     }
 };
 
