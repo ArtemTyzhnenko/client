@@ -14,10 +14,13 @@ export const signupError = (massage) => {
     }
 };
 
-export const signUpUser = (formProps) => {
+export const signUpUser = (formProps, callback) => {
     return dispatch => {
         return axios.post('http://localhost:3090/signup', formProps)
-            .then(response => dispatch(signup(response.data.token)))
+            .then(response => {
+                dispatch(signup(response.data.token));
+                callback();
+            })
             .catch(() => dispatch(signupError('Email in use')))
     }
 };

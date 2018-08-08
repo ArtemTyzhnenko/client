@@ -7,7 +7,9 @@ import * as actions from '../../../reducers/Auth/actions';
 class Signup extends  Component {
 
     onSubmit = (formProps) => {
-        this.props.signUpUser(formProps);
+        this.props.signUpUser(formProps, ()=>{
+            this.props.history.push('/feature');
+        });
     };
 
     render() {
