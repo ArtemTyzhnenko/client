@@ -4,9 +4,11 @@ import './App.css';
 
 export default ({ children })=>{
     return (
-      <div className="App">
-          <Header/>
-          {children}
+      <div className="app">
+          <Header className="header"/>
+          <div className="content">
+              {children}
+          </div>
       </div>
     );
 }
